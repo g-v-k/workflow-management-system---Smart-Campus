@@ -1,0 +1,13 @@
+﻿<!doctype html>
+<html>
+<body>
+        {% for x in joblist %}
+        <input type="radio" name="job_name" id="node_{{x}}" value="{{x}}" />
+        <label for="node_{{x}}"> Job {{x}} </label> <br />
+        <br />
+        {% endfor %}
+
+        <input type="submit" value="Render Job" onclick="renderJob()">    
+</body>
+
+</html>

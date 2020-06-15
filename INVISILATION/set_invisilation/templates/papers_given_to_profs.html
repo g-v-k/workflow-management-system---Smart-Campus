@@ -1,0 +1,33 @@
+﻿
+<div id="papers_given_to_profs_table_div">
+
+    <p class="name">Papers Given to Professors</p>
+    <table id="papers_given_to_profs_table" border="1" align="center">
+        <tr>
+            <th>Professor</th>
+            <th>Student Name</th>
+            <th>Student Roll No.</th>
+            <th>Exam Room No.</th>
+            <th>Exam Date</th>
+            <th>Time Slot</th>
+            <th>Papers Given or Not</th>
+        </tr>
+        <tr>
+            <td>{{job['profName']}}</td>
+            <td>{{job['studentName']}}</td>
+            <td>{{job['studentRollNo']}}</td>
+            <td>{{job['roomNo']}}</td>
+            <td>{{job['examDate']}}</td>
+            <td>{{job['timeSlot']}}</td>
+            <td>
+                <form id="papers_given_to_profs_form" action="http://localhost:3000/papers_given_to_profs/submit" target="_blank" method="POST">
+                    <input type="hidden" name="jobID" value="{{job['jobID']}}">
+                    <select id="givenOrNot" name="givenOrNot">
+                        <option value="Given">Given</option>
+                        <option value="Not Given" selected>Not Given</option>
+                    </select>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,37 @@
+﻿
+<div id="ans_sheets_returned_table_div">
+
+    <p class="name">Answer Sheets Returned by Professors</p>
+    <table id="ans_sheets_returned_table" border="1" align="center">
+        <tr>
+            <th>Professor</th>
+            <th>Student Name</th>
+            <th>Student Roll No.</th>
+            <th>Exam Room No.</th>
+            <th>Exam Date</th>
+            <th>Time Slot</th>
+            <th>Question papers</th>
+            <th>Papers Returned or Not</th>
+        </tr>
+        <tr>
+            <td>{{job['profName']}}</td>
+            <td>{{job['studentName']}}</td>
+            <td>{{job['studentRollNo']}}</td>
+            <td>{{job['roomNo']}}</td>
+            <td>{{job['examDate']}}</td>
+            <td>{{job['timeSlot']}}</td>
+            <td>{{job['papersGivenOrNot']}}</td>
+            <td>
+                <form id="ans_sheets_returned_form" action="http://localhost:3000/ans_sheets_returned/submit" target="_blank" method="POST">
+                    <input type="hidden" name="jobID" value="{{job['jobID']}}">
+                    <select id="returnedOrNot" name="returnedOrNot">
+                        <option value="Returned">Returned</option>
+                        <option value="Not Returned" selected>Not Returned</option>
+                    </select>
+                </form>
+                
+            </td>
+        </tr>
+    </table>
+
+</div>

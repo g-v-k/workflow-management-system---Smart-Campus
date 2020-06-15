@@ -1,0 +1,38 @@
+#heading {
+    margin-top: 100px;
+    font-size: x-large;
+    font-weight: 200;
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#username,
+#password {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#submit {
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type='text']::placeholder,
+input[type='password']::placeholder {
+    text-align: center;
+}

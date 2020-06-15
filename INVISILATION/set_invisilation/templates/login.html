@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <link rel="stylesheet" type = "text/css" href = "../static/css/login.css"/>
+    <script src="../static/scripts/jquery-3.5.0.min.js"></script>
+</head>
+
+<body>
+    <div id="heading">Set Invisilators</div>
+    <div id="login">
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" id="submit">Login</button>
+        <script>
+            let button = document.getElementById("submit");
+            button.addEventListener("click", function () {
+
+                let details = {};
+                details.username = document.getElementById("username").value;
+                details.password = document.getElementById("password").value;
+                console.log(details);
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3000/login',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(details),
+                    processData: false,
+                    success: function (resultData) {
+                        console.log(resultData)
+                        if (resultData.login == 'fail') {
+                            alert("Wrong username / Password");
+                        }
+                        else if(resultData.login == 'success'){
+                        }
+                       window.location.href = resultData.redirect;
+
+                    }
+                });
+
+            })
+
+        </script>
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html>
+<body>
+    <table border=1>
+
+        <tr>
+            {% for col in mydf.columns %}
+            <th> {{ col }} </th>
+            {% endfor %}
+        </tr>
+
+
+        {% for index,row in mydf.iterrows() %}
+        <tr>
+            {% for x in row %}
+            <td> {{ x }} </td>
+            {% endfor %}
+        <tr>        
+        {% endfor %}
+
+    </table>
+</body>
+</html>
